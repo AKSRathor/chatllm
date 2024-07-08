@@ -12,7 +12,6 @@ const myfunc = async()=> {
     body: JSON.stringify({ })
   })
   await response.json()
-  // console.log(json)
 
 }
 myfunc()
