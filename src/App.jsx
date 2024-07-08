@@ -1,17 +1,30 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import Chatbot from "./components/Chatbot.jsx"
 import './App.css'
+const myfunc = async()=> {
+  const response = await fetch(`https://llm-verifier.vercel.app/selectmodel`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ })
+  })
+  await response.json()
+  // console.log(json)
+
+}
+myfunc()
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
-  return (
-    <>
-    <Chatbot/>
-    </>
-  )
+return (
+  <>
+    <Chatbot />
+  </>
+)
 }
 
 export default App
